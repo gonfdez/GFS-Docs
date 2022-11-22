@@ -1,0 +1,20 @@
+.home-container {
+  margin-top: 64px;
+  height: calc(100vh - 128px);
+}
+
+.home-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 300px;
+  max-width: 300px !important;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 6px;
+  transition: box-shadow 0.5s;
+}
+
+.home-card:hover {
+  cursor: pointer;
+  box-shadow: #0000007a 0px 6px 16px;
+}

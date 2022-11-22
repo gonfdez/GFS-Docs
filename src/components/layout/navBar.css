@@ -1,0 +1,13 @@
+.navbar-box {
+  background-color: var(--secondary-color) !important;
+  color: var(--text-primary-color) !important;
+}
+
+.footer-box {
+  bottom: 0 !important;
+  width: 100%;
+}
+
+#navbar-search-field {
+  width: 450px !important;
+}

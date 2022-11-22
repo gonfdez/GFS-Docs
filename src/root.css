@@ -3,13 +3,36 @@
 /* Google Font Source Code Pro */
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
+:root {
+  --primary-text-color: #1a1a1a;
+  --primary-color : #ececec;
+  --secondary-color: #eeeeee;
+
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', 'Roboto', 'Oxygen', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--text-primary-color)
 }
 
 code {
   font-family: 'Source Code Pro', monospace;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #5f5f5f;
+}
+::-webkit-scrollbar-thumb {
+  background: #bababa;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a5a5a5;
 }

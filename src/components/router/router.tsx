@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Home from "../../pages/home";
+import Layout from "../layout/layout";
 import { INDEX_PATH } from "./paths";
 
 
@@ -11,7 +12,9 @@ const AppRouter = () : JSX.Element => {
       <Routes>
         <Route path={INDEX_PATH} >
           <Route index 
-            element={<Home/>}
+            element={
+              <Layout><Home/></Layout>
+            }
             />
         </Route>
       </Routes>
