@@ -1,5 +1,17 @@
 const vitalsUrl = 'https://vitals.vercel-analytics.com/v1/vitals';
 
+export const reportWebVitals = onPerfEntry => {
+  if (onPerfEntry && onPerfEntry instanceof Function) {
+    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+      getCLS(onPerfEntry);
+      getFID(onPerfEntry);
+      getFCP(onPerfEntry);
+      getLCP(onPerfEntry);
+      getTTFB(onPerfEntry);
+    });
+  }
+};
+
 function getConnectionSpeed() {
   return 'connection' in navigator &&
     navigator['connection'] &&

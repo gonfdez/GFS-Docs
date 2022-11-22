@@ -1,0 +1,15 @@
+/* Google Font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* Google Font Source Code Pro */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Roboto', 'Oxygen', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'Source Code Pro', monospace;
+}
