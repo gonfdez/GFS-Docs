@@ -1,6 +1,6 @@
 .home-container {
-  margin-top: 64px;
-  height: calc(100vh - 128px);
+  padding-top: 20px;
+  min-height: calc(100vh - 118px);
 }
 
 .home-card {

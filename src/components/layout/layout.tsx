@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "./navBar";
+import NavBar, { Footer } from "./navBar";
 
 interface LayoutProps {
   children? : JSX.Element | JSX.Element[]
@@ -8,7 +8,7 @@ interface LayoutProps {
 const Layout = (props : LayoutProps) : JSX.Element => (<>
   <NavBar />
     {props.children}
-  <NavBar footer />
+  <Footer/>
 </>);
 
 export default Layout;

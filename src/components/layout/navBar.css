@@ -1,6 +1,7 @@
-.navbar-box {
+.navbar, .footer-container {
   background-color: var(--secondary-color) !important;
   color: var(--text-primary-color) !important;
+  height: 59px !important;
 }
 
 .footer-box {
@@ -10,4 +11,13 @@
 
 #navbar-search-field {
   width: 450px !important;
+}
+.footer-container {
+  display: flex;
+}
+
+.footer-container > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
