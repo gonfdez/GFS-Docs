@@ -47,16 +47,17 @@
   border-radius: 10px;
   min-height: 40px;
   width: fit-content;
-  height: max-content;
+  background-color: var(--background-secondary-color);
   padding: 10px;
   transition: all 0.5s;
 }
 .post-row-hover {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 16px;
   cursor: pointer;
-  border: none;
+
 }
 
 .main-back-button {
-  position: fixed;
+  position: sticky;
+  top: 60px;
 }
