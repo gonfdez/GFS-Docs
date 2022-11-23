@@ -17,7 +17,7 @@ const PostRow = (props : PostRowProps) : JSX.Element => {
       <div className="d-none d-md-block col-3 col-md-2 text-end" style={{paddingTop: 10}}>
         {props.date}
       </div>
-      <div className="col-auto ms-4 ms-md-0">
+      <div className="d-flex flex-column col-auto ms-4 ms-md-0">
         <div className={`timeline-icon ${isHover && 'post-row-hover'}`} onMouseEnter={()=>setIsHover(true)} onMouseLeave={()=>setIsHover(false)}>
           {props.emoji}
         </div>
