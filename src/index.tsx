@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './root.css';
 import App from './App';
 import { sendToVercelAnalytics, reportWebVitals } from './vitals';
+import './root.css';
+import 'animate.css';
 
 ReactDOM.render(
   <React.StrictMode>

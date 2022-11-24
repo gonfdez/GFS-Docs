@@ -2,6 +2,7 @@
   background-color: var(--secondary-color) !important;
   color: var(--text-primary-color) !important;
   height: 59px !important;
+  z-index: 1000;
 }
 
 .footer-box {

@@ -49,19 +49,19 @@ const TimeLine = (props: TimeLineProps) : JSX.Element => {
 
   return (
     <section className="container-fluid timeline-container">
-      <div className="container main-back-button">
+      <div className="container main-back-button animate__animated animate__bounceInLeft">
         <button type="button" className="btn btn-light border d-none d-md-block" onClick={()=>navigate('/')}>👈 Volver</button>
       </div>
       <div className="row justify-content-center">
-        <div className="col text-center timeline-card">
-            <img src={require('../../media/react.svg').default} alt="React Logo" height={100} className="rotate-logo"/>
+        <div className="col text-center timeline-card animate__animated animate__fadeInDown">
+            <img src={require('../../media/react.svg').default} alt="React Logo" height={100} />
             <h2>
               {props.category.title}
             </h2>
         </div>
       </div>
       
-      <div className="row justify-content-center mt-5">
+      <div className="row justify-content-center mt-5 animate__animated animate__backInUp">
         <div className="col-12 col-md-4 pe-5 pe-md-0 ps-5 ps-md-0">
           
           {/* POSTS ROWS */}
