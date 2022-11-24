@@ -62,7 +62,7 @@ const TimeLine = (props: TimeLineProps) : JSX.Element => {
       </div>
       
       <div className="row justify-content-center mt-5">
-        <div className="col-12 col-md-6 pe-5 pe-md-0 ps-5 ps-md-0">
+        <div className="col-12 col-md-4 pe-5 pe-md-0 ps-5 ps-md-0">
           
           {/* POSTS ROWS */}
           <PostRow date="20, nov" emoji="🎥"
