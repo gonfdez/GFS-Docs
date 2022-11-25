@@ -1,6 +1,9 @@
-import React from "react";
+import Markdown from "markdown-to-jsx";
+import React, { useEffect, useState }/* , { useEffect, useState } */ from "react";
 import { useNavigate } from "react-router-dom";
 import { post } from "./posts";
+import PostMarkdown from "./markdowns/busDeEventos.md";
+import "./postPage.css";
 
 interface PostPageProps {
   post : post, 
@@ -10,6 +13,11 @@ interface PostPageProps {
 const Post = (props : PostPageProps) : JSX.Element => {
 
   const navigate = useNavigate();
+  const [post, setPost] = useState('');
+
+	useEffect(() => {
+		fetch(PostMarkdown).then(res => res.text()).then(text => setPost(text)).catch((err)=>console.log('Error:',err));
+	})
 
   return (
     <section className="container-fluid timeline-container">
@@ -25,9 +33,11 @@ const Post = (props : PostPageProps) : JSX.Element => {
         </div>
       </div>
       
-      <div className="row justify-content-center mt-5 animate__animated animate__backInUp">
-        <div className="col-12 col-md-6 pe-5 pe-md-0 ps-5 ps-md-0">
-          {props.post.body}
+      <div className="row justify-content-center animate__animated animate__backInUp">
+        <div className="col-12 col-md-6 pe-5 pe-md-0 ps-5 ps-md-0 post-content-container">
+          <Markdown>
+            {post} 
+          </Markdown>
         </div>
       </div>
     </section>
