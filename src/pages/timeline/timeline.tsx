@@ -1,26 +1,30 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { category } from "../../components/posts/posts";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { category, post } from "../../components/posts/posts";
 import './timeline.css';
 
 interface PostRowProps {
-  date: string,
+  date?: string,
   emoji: string,
   title: string,
   end?: boolean
+  url?: string
 }
 
 const PostRow = (props : PostRowProps) : JSX.Element => {
   const [isHover, setIsHover] = useState(false);
+  const location = useLocation();
   return (
     <div className="row align-items-stretch">
-      <div className="d-none d-md-block col-3 col-md-2 text-end" style={{paddingTop: 10}}>
-        {props.date}
+      <div className="d-none d-md-flex col-3 col-md-2 justify-content-end" style={{paddingTop: 10}}>
+        {props.date??'Próximamente'}
       </div>
       <div className="d-flex flex-column col-auto">
-        <div className={`timeline-icon ${isHover && 'post-row-hover'}`} onMouseEnter={()=>setIsHover(true)} onMouseLeave={()=>setIsHover(false)}>
-          {props.emoji}
-        </div>
+        <Link to={location.pathname+'/'+props.url} className="no-hover" >
+          <div className={`timeline-icon ${isHover && 'post-row-hover'}`} onMouseEnter={()=>setIsHover(true)} onMouseLeave={()=>setIsHover(false)}>
+            {props.emoji}
+          </div>
+        </Link>
         {!props.end && 
         <div className="timeline-separator-container">
           <div className="timeline-separator "></div>
@@ -28,9 +32,11 @@ const PostRow = (props : PostRowProps) : JSX.Element => {
         }
       </div>
       <div className="col  mb-5">
-        <div className={`post-title ${isHover && 'post-row-hover'}`} onMouseEnter={()=>setIsHover(true)} onMouseLeave={()=>setIsHover(false)}>
-          {props.title}
-        </div>
+        <Link to={location.pathname+'/'+props.url} className="no-hover" >
+          <div className={`post-title ${isHover && 'post-row-hover'}`} onMouseEnter={()=>setIsHover(true)} onMouseLeave={()=>setIsHover(false)}>
+            {props.title}
+          </div>
+        </Link>
       </div>
     </div>
   );
@@ -65,9 +71,9 @@ const TimeLine = (props: TimeLineProps) : JSX.Element => {
         <div className="col-12 col-md-4 pe-5 pe-md-0 ps-5 ps-md-0">
           
           {/* POSTS ROWS */}
-          <PostRow date="20, nov" emoji="🎥"
+          <PostRow emoji="🎥"
           title="Animaciones y SVGs" />
-          <PostRow date="20, nov" emoji="🌗"
+          <PostRow emoji="🌗"
           title="Crea tu propio selector de tema" />
           <PostRow date="20, nov" emoji="🌍"
           title="¿Qué es el estado global? Explicación de Redux" />
@@ -81,6 +87,14 @@ const TimeLine = (props: TimeLineProps) : JSX.Element => {
           title="Renderizar modelos 3D"/> 
           <PostRow date="20, nov" emoji="🗺"
           title="Utilización de mapas"/> 
+
+          {props.category.posts?.map((post : post) => {
+            return (
+              <PostRow date={post.date} emoji={post.emoji??'👽'} title={post.title} url={post.url} key={post.url}/> 
+            );
+          })}
+
+
         </div>
       </div>
     </section>
