@@ -32,7 +32,7 @@ const Post = (props : PostPageProps) : JSX.Element => {
 
   const PostImage = (props : any) => {
     // eslint-disable-next-line
-    return (<img src={require(props.require).default} {...props}/>);
+    return (<img src={require('../../media/react.svg').default} {...props}/>);
   };
 
   return (
@@ -42,7 +42,7 @@ const Post = (props : PostPageProps) : JSX.Element => {
       </div>
       <div className="row justify-content-center">
         <div className="col text-center timeline-card">
-            <img src={require('./../../media/react.svg').default} alt="React Logo" height={100} />
+            <img src={require('../../media/react.svg').default} alt="React Logo" height={100} />
             <h2>
               {props.post.emoji}   {props.post.title}
             </h2>
