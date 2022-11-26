@@ -17,14 +17,22 @@ const AppRouter = () : JSX.Element => {
             {/* HOME */}
             <Route index element={<Layout><Home/></Layout>}/>
             {/* CATEGORIES TIMELINE */}
-            {ALL_CATEGORIES.map((i : category)=>{return (<>
+            {ALL_CATEGORIES.map((i : category)=>{return (
               <Route path={i.path} key={i.path} element={<Layout><TimeLine category={i}/></Layout>}/>
-              {i.posts?.map((post : post)=>{ return (
-                <Route path={i.path+'/'+post.url} key={i.path+'/'+post.url} element={<Layout><Post categoryPath={i.path} post={post} /></Layout>} />
-              );})}
-            </>
             );})}
 
+            {ALL_CATEGORIES.map((i : category)=>
+              i.posts?.map((post : post)=>{ return (
+                <Route 
+                  path={i.path+'/'+post.url} 
+                  key={i.path+'/'+post.url} 
+                  element={
+                    <Layout>
+                      <Post categoryPath={i.path} post={post} />
+                    </Layout>} 
+                />);}
+              ))}
+         
 
         </Route>
       </Routes>

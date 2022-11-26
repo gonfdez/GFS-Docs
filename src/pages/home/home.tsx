@@ -8,7 +8,7 @@ const Home = () : JSX.Element => {
   /* Falta SEO */
 
   return (
-    <section className="container home-container pt-5 animate__animated animate__backInDown">
+    <section className="container home-container pt-5 animate__animated animate__fadeIn">
       <div className="row justify-content-center">
         <div className="col-12 col-md-auto">
 

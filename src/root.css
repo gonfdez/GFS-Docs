@@ -45,6 +45,7 @@ body {
 
 code {
   font-family: 'Source Code Pro', monospace;
+  background-color: var(--background-secondary-color) !important;
 }
 
 input {
@@ -54,7 +55,8 @@ input {
 
 /* SCROLLBAR */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
   background: #5f5f5f;

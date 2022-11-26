@@ -1,15 +1,27 @@
+.post-content-container {
+  text-align: justify;
+}
+
+.post-content-container > div {
+ display: flex;
+ flex-direction: column;
+}
+
 .post-content-container p {
   margin-bottom: 20px;
 }
 
-.post-content-container h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 40px;
+.post-content-container :is(h1, h2, h3, h4, h5, h6) {
+    margin-bottom: 40px;
 }
-
+  
 .post-content-container pre {
-  background-color: var(--background-secondary-color);
-  padding: 10px;
   border-radius: 6px;
   margin-top: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
+}
+
+.post-content-container img {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
