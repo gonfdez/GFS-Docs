@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { category, post } from "../../components/posts/posts";
 import './timeline.css';
 
@@ -49,15 +49,10 @@ interface TimeLineProps {
 
 const TimeLine = (props: TimeLineProps) : JSX.Element => {
 
-  const navigate = useNavigate();
-
   /* Falta SEO */
 
   return (
     <section className="container-fluid timeline-container">
-      <div className="container main-back-button animate__animated animate__bounceInLeft">
-        <button type="button" className="btn btn-light border d-none d-md-block" onClick={()=>navigate('/')}>👈 Volver</button>
-      </div>
       <div className="row justify-content-center">
         <div className="col text-center timeline-card animate__animated animate__fadeInDown">
             <img src={require('../../media/react.svg').default} alt="React Logo" height={100} />
@@ -71,27 +66,9 @@ const TimeLine = (props: TimeLineProps) : JSX.Element => {
         <div className="col-12 col-md-4 pe-5 pe-md-0 ps-5 ps-md-0">
           
           {/* POSTS ROWS */}
-          <PostRow emoji="🎥"
-          title="Animaciones y SVGs" />
-          <PostRow emoji="🌗"
-          title="Crea tu propio selector de tema" />
-          <PostRow date="20, nov" emoji="🌍"
-          title="¿Qué es el estado global? Explicación de Redux" />
-          <PostRow date="20, nov" emoji="🚍"
-          title="Bus de eventos"/>   
-          <PostRow date="20, nov" emoji="📞"
-          title="Como llamar correctamente a una API"/>   
-          <PostRow date="20, nov" emoji="📔"
-          title="Inserta Markdows en tu aplicación"/> 
-          <PostRow date="20, nov" emoji="🍩"
-          title="Renderizar modelos 3D"/> 
-          <PostRow date="20, nov" emoji="🗺"
-          title="Utilización de mapas"/> 
-
-          {props.category.posts?.map((post : post) => {
-            return (
-              <PostRow date={post.date} emoji={post.emoji??'👽'} title={post.title} url={post.url} key={post.url}/> 
-            );
+          {props.category.posts?.map((post : post, index) => {
+            if (index===0) return <PostRow end date={post.date} emoji={post.emoji??'👽'} title={post.title} url={post.url} key={post.url}/>;
+            else return <PostRow date={post.date} emoji={post.emoji??'👽'} title={post.title} url={post.url} key={post.url}/>;
           })}
 
 

@@ -32,7 +32,7 @@ const Post = (props : PostPageProps) : JSX.Element => {
 
   const PostImage = (props : any) => {
     // eslint-disable-next-line
-    return (<img src={require('../../media/react.svg').default} {...props}/>);
+    return (<img {...props}/>);
   };
 
   return (
@@ -51,21 +51,21 @@ const Post = (props : PostPageProps) : JSX.Element => {
       
       <div className="row justify-content-center mt-5">
         <div className="col-12 col-md-6 pe-5 pe-md-0 ps-5 ps-md-0 post-content-container">
-        <Markdown
-        options={{
-            overrides: {
-                code: {
-                    component: CodeBlock,
-                    props: {
-                        className: 'hljs',
+          <Markdown
+            options={{
+                overrides: {
+                    code: {
+                        component: CodeBlock,
+                        props: {
+                            className: 'hljs',
+                        },
                     },
+                    PostImage
                 },
-                PostImage
-            },
-        }}
-    >
-      {post}
-    </Markdown>
+            }}
+          >
+            {post}
+          </Markdown>
         </div>
       </div>
     </section>
