@@ -16,7 +16,7 @@ const PostRow = (props : PostRowProps) : JSX.Element => {
   const location = useLocation();
   return (
     <div className="row align-items-stretch">
-      <div className="d-none d-md-flex col-3 col-md-2 justify-content-end" style={{paddingTop: 10}}>
+      <div className="d-none d-md-flex col-3 justify-content-end" style={{paddingTop: 10}}>
         {props.date??'Próximamente'}
       </div>
       <div className="d-flex flex-column col-auto">
