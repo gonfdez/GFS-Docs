@@ -16,7 +16,7 @@ const IframesContainer = (props : IframesContainerProps) : JSX.Element => {
 
   props.children.forEach((iframe,index)=>{
 
-    buttons.push(<button type="button" className="btn btn-dark me-3" onClick={()=>setSelectedOption(titles[index])}>{titles[index]}</button>);
+    buttons.push(<button type="button" className={`btn btn-dark me-3 ${selectedOption === titles[index] ? 'active' : ''}`} onClick={()=>setSelectedOption(titles[index])}>{titles[index]}</button>);
     iframesContainers.push(
     <div style={{display: selectedOption === titles[index] ? 'flex' : 'none'}} className="mt-5 ">
       {iframe}
@@ -26,10 +26,10 @@ const IframesContainer = (props : IframesContainerProps) : JSX.Element => {
 
   return (
   <>
+    <div className="d-flex">
+      {buttons.map((button)=>button)}
+    </div>
     <div className="d-flex flex-column align-items-center">
-      <div className="d-flex justify-content-center">
-        {buttons.map((button)=>button)}
-      </div>
       {iframesContainers.map((iframeContainer)=>iframeContainer)}
     </div>
   </>);

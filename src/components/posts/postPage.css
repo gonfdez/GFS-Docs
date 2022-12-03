@@ -63,7 +63,16 @@
   border-bottom: solid 2px var(--background-3-color);
 }
 
-.post-content-container .btn.btn-dark {
+.post-content-container .btn {
   background-color: var(--primary-text-color);
   color: var(--background-color);
+  box-shadow: none !important;
+  border: 2px solid var(--primary-text-color);
+  transition: all .5s;
+}
+
+.post-content-container .btn.active {
+  background-color: transparent;
+  color: var(--primary-text-color);
+  font-weight: bold;
 }
