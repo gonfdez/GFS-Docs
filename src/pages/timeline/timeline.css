@@ -47,5 +47,6 @@
 .main-back-button {
   position: sticky;
   top: 60px;
-  z-index: 1001;
+  left: 100px;
+  width: 105px;
 }

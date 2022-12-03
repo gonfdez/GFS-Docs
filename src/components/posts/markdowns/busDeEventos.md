@@ -5,12 +5,13 @@ Se puede utilizar para tener comunicación entre componentes manteniéndolos **d
 
 Además, al lanzar un evento podemos añadirle información que llegará a todos los observadores.
 
-<CodeBlock titleIDs={["ReactJS","Typescript"]}>
+<CodeBlock id="solution" titleIDs={["Javascript","Typescript"]}>
 
 ```js
+// ./src/utils/eventBus.js
 export const EventBus = {
-  emit: (event, data) =>
-    document.dispatchEvent(new CustomEvent(event, { detail: data })),
+  emit: (event, customDetail) =>
+    document.dispatchEvent(new CustomEvent(event, { detail: customDetail })),
   on: (event, callback) => {
     const myCallback = (e) => callback(e.detail);
     document.addEventListener(event, myCallback);
@@ -21,16 +22,16 @@ export const EventBus = {
 };
 
 export default EventBus;
-/* path example: /src/utils/eventBus.js */
 ```
 
 ```typescript
+// ./src/utils/eventBus.ts
 export interface EventDetail<T = unknown> {
   error: boolean;
-  customDetail?: T;
+  data?: T;
 }
 
-export type removeListenerCallback = () => void;
+export type RemoveListenerCallback = () => void;
 
 export const EventBus = {
   emit: <T = unknown>(event: string, customDetail: EventDetail<T>) =>
@@ -40,48 +41,93 @@ export const EventBus = {
   on: <T = unknown>(event: string, callback: (e: EventDetail<T>) => void) => {
     const myCallback = (e: Event) => callback((e as CustomEvent).detail);
     document.addEventListener(event, myCallback);
-    const removeListener: removeListenerCallback = () =>
+    const removeListener: RemoveListenerCallback = () =>
       document.removeEventListener(event, myCallback);
     return removeListener;
   }
 };
 
 export default EventBus;
-/* path example: /src/utils/eventBus.ts */
 ```
 
 </CodeBlock>
 
-
-
-
 <Note> 
-  Los identificadores de los eventos deben ser unicos, una forma simple de manjearlos es
+  Los **identificadores de los eventos** deben ser **unicos**, una forma simple de manjearlos es
   declarándolos como constantes en el fichero "eventBus.js" y exportarlos cuando sea necesario.
 </Note>
 
 <SectionTitle>Utilización:</SectionTitle>
 
-<CodeBlock titleIDs={["ReactJS"]}>
+<CodeBlock id="utilization" titleIDs={["ReactJS","Typescript"]}>
 
 ```js
-import EventBus from "./path/to/eventBus.js";
+import EventBus from "./path/to/eventBus";
+import { useRef } from "react";
 
-// LAZAR un evento
-EventBus.emit(event_id : string, data : any ) : boolean
+// # LAZAR un evento
+EventBus.emit("event_id", { whatever : true });
 
-// SUSCRIBIRSE a un evento
-EventBus.on(event_id : string, callback : () => void) : () => void
+// # SUSCRIBIRSE a un evento
+EventBus.on("event_id", (customDetail) => console.log(customDetail.whatever));
 
-// DESUSCRIBIRSE a evento
-// Necesitamos guardar la función que obtenemos al suscribirnos
-const removeListener = EventBus.on("event_id", callback);
+// # DESUSCRIBIRSE de un evento
+// Necesitamos guardar la referencia de la función que obtenemos al suscribirnos
+const removeListener = useRef(undefined);
+
+// Por normal general nos suscribimos a eventos al cargar el componente
+useEffect(() => {
+  // Guardo la referencia para poder desuscribirme cuando quiera
+  removeListener.current = EventBus.on("event_id", callback);
+}, []);
+
 //...
-// Nos desuscribimos ejecutando la función
-removeListener();
+// Nos desuscribimos ejecutando la función gruardada en la referencia
+removeListener.current();
+
+// # CALLBACK
+const callback = (customDetail) => {
+  // detail.error : boolean
+  // detail.data : any
+}
+```
+
+```ts
+import EventBus, { EventDetail, RemoveListenerCallback } from "./path/to/eventBus";
+import { useRef } from "react";
+
+// # LAZAR un evento
+EventBus.emit<string>("event_id", { error : false, data : 'Soy información del evento' });
+
+// # SUSCRIBIRSE a un evento
+EventBus.on<string>("event_id", (customDetail : EventDetail) => console.log(customDetail.data));
+
+// # DESUSCRIBIRSE de un evento
+// Necesitamos guardar la referencia de la función que obtenemos al suscribirnos
+const removeListener = useRef<RemoveListenerCallback>();
+
+// Por normal general nos suscribimos a eventos al cargar el componente
+useEffect(() => {
+  // Guardo la referencia para poder desuscribirme cuando quiera
+  removeListener.current = EventBus.on<string>("event_id", callback);
+}, []);
+
+//...
+// Nos desuscribimos ejecutando la función gruardada en la referencia
+removeListener.current();
+
+// # CALLBACK
+const callback = (detail : EventDetail<string>) => {
+  // detail.error : boolean
+  // detail.data : string (En este caso)
+}
 ```
 
 </CodeBlock>
+
+<Note> 
+  El segundo parámetro ("customDetail") de EventBus.emit(...) puede ser de **cualquier tipo**. En typescript basta con **modificar** a nuestro antojo la interfaz **EventDetail**. Este parámetro será recibido por la función callback que pasemos al suscribirnos => EventBus.on( ..., callback(customDetail) ).
+</Note>
 
 <SectionTitle>Ejemplo de uso:</SectionTitle>
 

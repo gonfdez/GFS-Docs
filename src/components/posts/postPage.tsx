@@ -40,7 +40,7 @@ const Post = (props : PostPageProps) : JSX.Element => {
 
   return (
     <section className="container-fluid timeline-container animate__animated animate__fadeIn">
-      <div className="container main-back-button animate__animated animate__bounceInLeft">
+      <div className="main-back-button animate__animated animate__bounceInLeft">
         <button type="button" className="btn btn-light border d-none d-md-block" onClick={()=>navigate('/'+props.categoryPath)}>👈 Volver</button>
       </div>
       <div className="row justify-content-center">
@@ -52,7 +52,7 @@ const Post = (props : PostPageProps) : JSX.Element => {
       </div>
       
       <div className="row justify-content-center mt-5">
-        <div className="col-12 col-md-6 pe-5 pe-md-0 ps-5 ps-md-0 post-content-container">
+        <div className="col-12 col-md-7 pe-5 pe-md-0 ps-5 ps-md-0 post-content-container">
           <Markdown
             options={{
                 overrides: {
