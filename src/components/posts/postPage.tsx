@@ -7,6 +7,7 @@ import "./postPage.css";
 import "highlight.js/styles/github.css";
 import hljs from "highlight.js";
 import { useLayoutEffect } from "react";
+import CodeBlock, { CustomCode } from "./codeBlock";
 
 interface PostPageProps {
   post : post, 
@@ -25,11 +26,6 @@ const Post = (props : PostPageProps) : JSX.Element => {
     hljs.highlightAll();
   });
 
-  const CodeBlock = (props : { children : any, className : string }) => {
-    const newClassName = props.className.replace('lang','language').toLocaleLowerCase();
-    return (<code className={newClassName}>{props.children}</code>);
-  };
-
   const PostImage = (props : any) => {
     return (<img {...props} alt={props.alt??'GFS Docs Post Image'}/>);
   };
@@ -39,7 +35,7 @@ const Post = (props : PostPageProps) : JSX.Element => {
   };
 
   const SectionTitle = (props : {children : any}) => {
-    return (<h4 className="mt-5 mb-0">{props.children}</h4>);
+    return (<h4 className="mt-5 mb-4">{props.children}</h4>);
   };
 
   return (
@@ -61,11 +57,12 @@ const Post = (props : PostPageProps) : JSX.Element => {
             options={{
                 overrides: {
                     code: {
-                        component: CodeBlock,
+                        component: CustomCode,
                         props: {
                             className: 'hljs',
                         },
                     },
+                    CodeBlock,
                     PostImage,
                     Note,
                     SectionTitle

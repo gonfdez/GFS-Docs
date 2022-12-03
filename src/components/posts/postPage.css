@@ -17,8 +17,7 @@
 }
   
 .post-content-container pre {
-  border-radius: 6px;
-  margin-top: 20px;
+  border-radius: 0px 0px 6px 6px;
   margin-bottom: 10px;
 }
 
@@ -36,8 +35,6 @@
 }
 
 .post-content-container iframe {
-  margin-top: 30px;
-  margin-bottom: 30px;
   min-width: 90vw !important;
   min-height: 80vh !important;
   align-self: center;
@@ -53,4 +50,15 @@
 
 .note-container i {
   font-size: var(--normal-font-size);
+}
+
+.post-content-container .nav-link {
+  text-decoration: none;
+  color: var(--primary-text-color);
+  font-family: var(--normal-font);
+}
+
+.post-content-container .nav-link.active {
+  background-color: var(--background-secondary-color);
+  border-bottom: solid 2px var(--background-3-color);
 }
