@@ -2,10 +2,10 @@ import React from "react";
 
 
 interface CodeBlockProps {
+  id : string
   titleIDs : string
   children : any[]
-  className? : string,
-  id : string
+  className? : string
 }
 
 export const CustomCode = (props : { children : any, className : string }) => {

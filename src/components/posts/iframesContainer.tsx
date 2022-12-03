@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
 interface IframesContainerProps {
+  id : string
   titleIDs : string
   children : any[]
-  className? : string,
+  className? : string
 }
 
 const IframesContainer = (props : IframesContainerProps) : JSX.Element => {
@@ -16,9 +17,23 @@ const IframesContainer = (props : IframesContainerProps) : JSX.Element => {
 
   props.children.forEach((iframe,index)=>{
 
-    buttons.push(<button type="button" className={`btn btn-dark me-3 ${selectedOption === titles[index] ? 'active' : ''}`} onClick={()=>setSelectedOption(titles[index])}>{titles[index]}</button>);
+    buttons.push(
+    <button 
+      key={props.id+titles[index]+'-button'}
+      type="button"
+      className={`btn btn-dark me-3 ${selectedOption === titles[index] ? 'active' : ''}`} 
+      onClick={()=>setSelectedOption(titles[index])}
+    >
+      {titles[index]}
+    </button>
+    );
+
     iframesContainers.push(
-    <div style={{display: selectedOption === titles[index] ? 'flex' : 'none'}} className="mt-5 ">
+    <div 
+      style={{display: selectedOption === titles[index] ? 'flex' : 'none'}} 
+      className="mt-5" 
+      key={props.id+titles[index]+'-iframe'}
+    >
       {iframe}
     </div>
     );
