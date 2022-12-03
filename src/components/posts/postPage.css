@@ -62,3 +62,8 @@
   background-color: var(--background-secondary-color);
   border-bottom: solid 2px var(--background-3-color);
 }
+
+.post-content-container .btn.btn-dark {
+  background-color: var(--primary-text-color);
+  color: var(--background-color);
+}

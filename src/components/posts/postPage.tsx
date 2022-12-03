@@ -8,6 +8,7 @@ import "highlight.js/styles/github.css";
 import hljs from "highlight.js";
 import { useLayoutEffect } from "react";
 import CodeBlock, { CustomCode } from "./codeBlock";
+import IframesContainer from "./iframesContainer";
 
 interface PostPageProps {
   post : post, 
@@ -65,7 +66,8 @@ const Post = (props : PostPageProps) : JSX.Element => {
                     CodeBlock,
                     PostImage,
                     Note,
-                    SectionTitle
+                    SectionTitle,
+                    IframesContainer
                 },
             }}
           >

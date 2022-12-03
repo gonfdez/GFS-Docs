@@ -130,18 +130,18 @@ const callback = (detail : EventDetail<string>) => {
 </Note>
 
 <SectionTitle>Ejemplo de uso:</SectionTitle>
+<IframesContainer id="examples" titleIDs={["ReactJS","Typescript"]}>
+  <iframe src="https://codesandbox.io/embed/bus-de-eventos-ligero-en-react-js-znqx3i?codemirror=1&expanddevtools=1&fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="Bus de eventos ligero en React JS"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+  ></iframe>
 
-<iframe src="https://codesandbox.io/embed/bus-de-eventos-ligero-en-react-js-znqx3i?codemirror=1&expanddevtools=1&fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="Bus de eventos ligero en React JS"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
-
-<iframe src="https://codesandbox.io/embed/bus-de-eventos-ligero-con-react-typescript-jx2pd3?codemirror=1&expanddevtools=1&fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.tsx&theme=dark"
-     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="Bus de eventos ligero con React Typescript"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-     className="mt-5"
-></iframe>
+  <iframe src="https://codesandbox.io/embed/bus-de-eventos-ligero-con-react-typescript-jx2pd3?codemirror=1&expanddevtools=1&fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.tsx&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="Bus de eventos ligero con React Typescript"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+  ></iframe>
+</IframesContainer>
