@@ -31,8 +31,15 @@ const Post = (props : PostPageProps) : JSX.Element => {
   };
 
   const PostImage = (props : any) => {
-    // eslint-disable-next-line
-    return (<img {...props}/>);
+    return (<img {...props} alt={props.alt??'GFS Docs Post Image'}/>);
+  };
+
+  const Note = (props : {children : any}) => {
+    return (<div className="note-container">📝 {props.children}</div>);
+  };
+
+  const SectionTitle = (props : {children : any}) => {
+    return (<h4 className="mt-5 mb-0">{props.children}</h4>);
   };
 
   return (
@@ -41,8 +48,7 @@ const Post = (props : PostPageProps) : JSX.Element => {
         <button type="button" className="btn btn-light border d-none d-md-block" onClick={()=>navigate('/'+props.categoryPath)}>👈 Volver</button>
       </div>
       <div className="row justify-content-center">
-        <div className="col text-center timeline-card">
-            <img src={require('../../media/react.svg').default} alt="React Logo" height={100} />
+        <div className="col text-center timeline-card mt-5">
             <h2>
               {props.post.emoji}   {props.post.title}
             </h2>
@@ -60,7 +66,9 @@ const Post = (props : PostPageProps) : JSX.Element => {
                             className: 'hljs',
                         },
                     },
-                    PostImage
+                    PostImage,
+                    Note,
+                    SectionTitle
                 },
             }}
           >

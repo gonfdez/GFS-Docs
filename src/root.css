@@ -10,9 +10,16 @@
   --background-color:#f6f6f6;
   --background-secondary-color:#eaeaea;
   --background-3-color:#c5c5c5;
+  --background-4:#ffe9a0;
 
   --primary-color : #ececec;
   --secondary-color: #eeeeee;
+
+  --normal-font: 'Poppins', 'Roboto', 'Oxygen', sans-serif;
+  --code-font: 'Source Code Pro', monospace;
+
+  --normal-font-size: 18px;
+  --small-font-size: 15px;
 
 }
 
@@ -37,14 +44,15 @@ p {
 body {
   background-color: var(--background-color);
   margin: 0;
-  font-family: 'Poppins', 'Roboto', 'Oxygen', sans-serif;
+  font-family: var(--normal-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--text-primary-color)
+  color: var(--text-primary-color);
+  font-size: var(--normal-font-size);
 }
 
 code {
-  font-family: 'Source Code Pro', monospace;
+  font-family: var(--code-font);
   background-color: var(--background-secondary-color) !important;
 }
 

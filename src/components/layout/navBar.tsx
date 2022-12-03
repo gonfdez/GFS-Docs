@@ -11,9 +11,9 @@ const NavBar = () : JSX.Element => (
         {/* <button className="btn btn-outline-success" type="submit">Buscar</button> */}
       </form>
       <div className="fs-3">
-        <i className="uil uil-sun me-4"></i>
+        <i className="icon ion-md-sunny"></i>
         <a href="https://github.com/gonfdez/GFS-Docs" target="_blank" rel="noreferrer" className="no-hover">
-          <i className="uil uil-github"></i>
+        <i className="icon ion-logo-github ms-5"></i>
         </a>
       </div>
     </div>
@@ -28,7 +28,7 @@ export const Footer = () : JSX.Element => (
       <span className="navbar-brand mb-0 h1"><Link to={'/'} className="no-hover">GFS Docs</Link></span>
       <div className="fs-3">
         <a href="https://github.com/gonfdez/GFS-Docs" target="_blank" rel="noreferrer" className="no-hover">
-          <i className="uil uil-github"></i>
+        <i className="icon ion-logo-github"></i>
         </a>
       </div>
     </div>

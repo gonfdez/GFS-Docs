@@ -1,5 +1,6 @@
 .post-content-container {
-  text-align: justify;
+  text-align: start;
+  margin-bottom: 150px
 }
 
 .post-content-container > div {
@@ -12,7 +13,7 @@
 }
 
 .post-content-container :is(h1, h2, h3, h4, h5, h6) {
-    margin-bottom: 40px;
+    font-weight: bold;
 }
   
 .post-content-container pre {
@@ -24,4 +25,32 @@
 .post-content-container img {
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+.post-content-container a {
+  text-decoration: underline;
+}
+
+.post-content-container a:hover {
+  text-decoration: none;
+}
+
+.post-content-container iframe {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  min-width: 90vw !important;
+  min-height: 80vh !important;
+  align-self: center;
+  box-shadow: rgba(0, 0, 0, 0.332) 0px 6px 16px;
+}
+
+.post-content-container .note-container {
+  background-color: var(--background-4);
+  padding: 15px;
+  border-radius: 6px;
+  font-size: var(--small-font-size);
+}
+
+.note-container i {
+  font-size: var(--normal-font-size);
 }
