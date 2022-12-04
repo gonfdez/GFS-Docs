@@ -3,7 +3,7 @@
 /* Google Font Source Code Pro */
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
-:root {
+body.light {
   --primary-text-color: #1a1a1a;
   --text-secondary-color: #404040;
 
@@ -21,6 +21,39 @@
   --normal-font-size: 18px;
   --small-font-size: 15px;
 
+  --bs-border-color: #eaeaea !important;
+}
+
+body.dark {
+  --primary-text-color: #f6f6f6;
+  --text-secondary-color: #1a1a1a;
+
+  --background-color: #3e3e3e;;
+  --background-secondary-color: #858585;
+  --background-3-color:#e4e4e4;
+  --background-4:#ffe9a0;
+
+  --primary-color : #3e3e3e;
+  --secondary-color: #252525;
+
+  --normal-font: 'Poppins', 'Roboto', 'Oxygen', sans-serif;
+  --code-font: 'Source Code Pro', monospace;
+
+  --normal-font-size: 18px;
+  --small-font-size: 15px;
+
+  --bs-border-color: #404040 !important;
+}
+
+body {
+  background-color: var(--background-color);
+  margin: 0;
+  font-family: var(--normal-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--primary-text-color);
+  font-size: var(--normal-font-size);
+  transition: background-color 0.3s ease;
 }
 
 a {
@@ -41,16 +74,6 @@ p {
   margin-bottom: 0px;
 }
 
-body {
-  background-color: var(--background-color);
-  margin: 0;
-  font-family: var(--normal-font);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: var(--text-primary-color);
-  font-size: var(--normal-font-size);
-}
-
 code {
   font-family: var(--code-font);
   background-color: var(--background-secondary-color) !important;
@@ -58,7 +81,7 @@ code {
 
 input {
   background-color: var(--background-color) !important;
-  color: var(--text-primary-color) !important;
+  color: var(--primary-text-color) !important;
 }
 
 /* SCROLLBAR */

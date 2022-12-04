@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './navBar.css';
+import ThemeProvider from "../themeProvider/themeProvider";
 
 const NavBar = () : JSX.Element => (
   <nav className="navbar bg-light border-bottom">
@@ -11,9 +12,9 @@ const NavBar = () : JSX.Element => (
         {/* <button className="btn btn-outline-success" type="submit">Buscar</button> */}
       </form>
       <div className="fs-3">
-        <i className="icon ion-md-sunny"></i>
-        <a href="https://github.com/gonfdez/GFS-Docs" target="_blank" rel="noreferrer" className="no-hover">
-        <i className="icon ion-logo-github ms-5"></i>
+        <ThemeProvider/>
+        <a href="https://github.com/gonfdez/GFS-Docs" target="_blank" rel="noreferrer" className="no-hover ms-5">
+        <i className="icon ion-logo-github"></i>
         </a>
       </div>
     </div>

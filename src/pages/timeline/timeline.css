@@ -50,3 +50,8 @@
   left: 100px;
   width: 105px;
 }
+
+.main-back-button button {
+  background-color: var(--background-secondary-color);
+  color: var(--primary-text-color);
+}

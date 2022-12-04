@@ -1,6 +1,6 @@
 .navbar, .footer-container {
   background-color: var(--secondary-color) !important;
-  color: var(--text-primary-color) !important;
+  color: var(--primary-text-color) !important;
   height: 59px !important;
   z-index: 1000;
 }
@@ -21,4 +21,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.navbar button, .footer-container button {
+  color: var(--text-primary-color);
 }

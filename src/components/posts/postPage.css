@@ -46,6 +46,7 @@
   padding: 15px;
   border-radius: 6px;
   font-size: var(--small-font-size);
+  color: var(--text-secondary-color);
 }
 
 .note-container i {
@@ -56,11 +57,17 @@
   text-decoration: none;
   color: var(--primary-text-color);
   font-family: var(--normal-font);
+  border: none;
 }
 
 .post-content-container .nav-link.active {
   background-color: var(--background-secondary-color);
-  border-bottom: solid 2px var(--background-3-color);
+  color: var(--primary-text-color);
+}
+
+.post-content-container .nav-link:hover:not(.active) {
+  background-color: var(--background-secondary-color);
+  filter: brightness(70%);
 }
 
 .post-content-container .btn {
@@ -75,4 +82,8 @@
   background-color: transparent;
   color: var(--primary-text-color);
   font-weight: bold;
+}
+
+.post-content-container .nav.nav-tabs {
+  border-color: var(--bs-border-color);
 }
