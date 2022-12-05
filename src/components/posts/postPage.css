@@ -19,6 +19,12 @@
 .post-content-container pre {
   border-radius: 0px 0px 6px 6px;
   margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.body-dark .post-content-container code {
+  cursor:default;
+  background-color: var(--background-secondary-color) !important;
 }
 
 .post-content-container img {
@@ -61,8 +67,8 @@
 }
 
 .post-content-container .nav-link.active {
-  background-color: var(--background-secondary-color);
-  color: var(--primary-text-color);
+  background-color: #1e1e22;
+  color: #f6f6f6;
 }
 
 .post-content-container .nav-link:hover:not(.active) {

@@ -11,16 +11,16 @@
 
 .timeline-icon {
   border-radius: 6px;
-  min-width: 40px;
   min-height: 40px;
   background-color: var(--background-secondary-color);
   display: flex;
   justify-content: center;
   align-items: center;
   color:black;
-  font-size: 25px;
   transition: all 0.5s;
   user-select: none;
+  padding: 8px 10px 8px 10px;
+  font-size: 22px;
 }
 
 .timeline-separator-container {
@@ -31,13 +31,15 @@
 }
 
 .post-title {
-  border-radius: 10px;
+  display: flex;
+  border-radius: 6px;
   min-height: 40px;
   width: fit-content;
   background-color: var(--background-secondary-color);
-  padding: 10px;
   transition: all 0.5s;
+  padding: 10px;
 }
+
 .post-row-hover {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 16px;
   cursor: pointer;

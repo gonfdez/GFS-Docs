@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import App from './App';
 import { sendToVercelAnalytics, reportWebVitals } from './vitals';
 import './root.css';
+import './felipec.min.css';
 import 'animate.css';
 
 const container = document.getElementById('root');

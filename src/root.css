@@ -25,11 +25,12 @@ body.light {
 }
 
 body.dark {
+
   --primary-text-color: #f6f6f6;
   --text-secondary-color: #1a1a1a;
 
   --background-color: #3e3e3e;;
-  --background-secondary-color: #858585;
+  --background-secondary-color: #2d2d2d;
   --background-3-color:#e4e4e4;
   --background-4:#ffe9a0;
 
@@ -43,6 +44,7 @@ body.dark {
   --small-font-size: 15px;
 
   --bs-border-color: #404040 !important;
+
 }
 
 body {
@@ -76,7 +78,7 @@ p {
 
 code {
   font-family: var(--code-font);
-  background-color: var(--background-secondary-color) !important;
+  font-size: 18px !important;
 }
 
 input {
